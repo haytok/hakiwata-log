@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  web-server:
+    build:
+      context: .
+      dockerfile: ./nginx/mistake/Dockerfile
+    ports:
+      - "5001:80"
+    volumes:
+      - ./nginx/mistake/conf/default.conf /etc/nginx/conf.d/
