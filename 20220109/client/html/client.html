@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>Client Side</title>
+</head>
+<body>
+<p>Client Side</p>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios.defaults.headers.common['Content-Type'] = 'text/plain';
+    async function sendGetRequest(url) {
+        try {
+            const config = {
+                headers : {
+                    Authorization: "key1"
+                }
+            };
+            const params = {};
+            const data = await axios.get(url, config);
+            console.log(data);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+</script>
+<script>
+    let requestUrl = "http://localhost:8000/"
+    requestUrl = "http://localhost:8001/"
+    sendGetRequest(requestUrl)
+</script>
+</html>
