@@ -12,7 +12,7 @@ ENV LANG ja_JP.UTF-8 \
 
 RUN pip install --upgrade pip
 
-COPY ./* /app/
+COPY ./requirements.txt /app/
 
 RUN pip install -r /app/requirements.txt
 
